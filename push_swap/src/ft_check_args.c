@@ -54,7 +54,7 @@ int	check_error(char **av, int i, int j)
 				j++;
 				if (av[i][j] == '\0')
 					break ;
-				if (!ft_isdigit(av[i][j]) && (av[i][j] == ' '))
+				if (!ft_isdigit(av[i][j]) && (av[i][j] != ' '))
 					return (false);
 			}
 			j++;

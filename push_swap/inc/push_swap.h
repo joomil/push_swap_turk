@@ -6,7 +6,7 @@
 /*   By: jmilesi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 22:21:42 by jmilesi          #+#    #+#             */
-/*   Updated: 2023/11/29 22:21:44 by jmilesi         ###   ########.fr       */
+/*   Updated: 2023/12/01 05:26:03 by jmilesi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
-void				list_args(char **argv, t_stack **stack_a);
 void				ft_add_back(t_stack **stack, t_stack *stack_new);
 t_stack				*ft_stack_new(int content);
 int					check_args(char **argv);
@@ -40,16 +39,17 @@ void				ft_free(t_stack **lst);
 
 /* Movements*/
 
+void				ft_pa(t_stack **a, t_stack **b);
+void				ft_pb(t_stack **stack_a, t_stack **stack_b);
+void				ft_sa(t_stack **a, int j);
+void				ft_sb(t_stack **b, int j);
+void				ft_ss(t_stack **a, t_stack **b);
 void				ft_ra(t_stack **a, int j);
 void				ft_rb(t_stack **b, int j);
-void				ft_sa(t_stack **a, int j);
-void				ft_pa(t_stack **a, t_stack **b, int j);
-void				ft_pb(t_stack **stack_a, t_stack **stack_b, int j);
+void				ft_rr(t_stack **a, t_stack **b);
 void				ft_rra(t_stack **a, int j);
-void				ft_ss(t_stack **a, t_stack **b, int j);
-void				ft_rr(t_stack **a, t_stack **b, int j);
-void				ft_rrr_sub(t_stack **b, int j);
-void				ft_rrr(t_stack **a, t_stack **b, int j);
+void				ft_rrb(t_stack **b, int j);
+void				ft_rrr(t_stack **a, t_stack **b);
 
 /* List utils*/
 
@@ -64,8 +64,6 @@ void				ft_sort(t_stack **stack_a);
 int					ft_checksorted(t_stack *stack_a);
 void				ft_sort_big(t_stack **stack_a);
 void				ft_sort_three(t_stack **stack_a);
-t_stack				*ft_parse(int argc, char **argv);
-t_stack				*ft_parse_args_quoted(char **argv);
 void				ft_freestr(char **lst);
 int					ft_case_rarb_a(t_stack *a, t_stack *b, int c);
 int					ft_case_rrarrb_a(t_stack *a, t_stack *b, int c);
@@ -81,16 +79,13 @@ int					ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
 int					ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
 int					ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s);
 int					ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
-void				ft_rrb(t_stack **b, int j);
 void				ft_check_sub(t_stack **a, t_stack **b, char *line);
 char				*ft_check(t_stack **a, t_stack **b, char *line);
 void				ft_checker_sub(t_stack **a, t_stack **b, char *line);
 t_stack				*ft_process(int argc, char **argv);
-void				ft_sb(t_stack **b, int j);
 void				algorithm(int argc, char **argv);
 void				ft_sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 t_stack				*ft_sub_process(char **argv);
-void				ft_error_ch(void);
 
 /* Libft */
 

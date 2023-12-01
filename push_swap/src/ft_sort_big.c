@@ -43,9 +43,7 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 
 	stack_b = NULL;
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_pb(stack_a, &stack_b, 0);
-	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
-		ft_pb(stack_a, &stack_b, 0);
+		ft_pb(stack_a, &stack_b);
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
 		ft_sort_b_till_3(stack_a, &stack_b);
 	if (!ft_checksorted(*stack_a))

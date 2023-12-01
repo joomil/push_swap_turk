@@ -50,7 +50,7 @@ t_stack	*ft_sub_process(char **av)
 
 	a = NULL;
 	i = 0;
-	temp = ft_split(av[1], 32);
+	temp = ft_split(av[1], ' ');
 	while (temp[i])
 	{
 		j = ft_atoi2(temp[i]);
